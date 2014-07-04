@@ -99,6 +99,7 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
     $http({method:'POST', url:'https://api.pushbullet.com/v2/pushes', data:params })
       .success(function(response) {
         $scope.pushing = false;
+        safari.self.hide();
       })
       .error(function(resp) {
         $scope.pushing = false;
