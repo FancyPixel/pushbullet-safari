@@ -1,0 +1,9 @@
+<div class='selection' ng-show='selection' ng-click='removeSelection()'>
+  <span class='thumb-selected device-thumb icon-default icon-{{selection.type}}'></span>
+  <input type='text' class='device-selected' value='{{selection.display}}' readonly />
+</div>
+<input type='text' class='search-field' ng-enter='selectFirst()' ng-change='filter()' ng-show='!selection' ng-model='search' ng-focus='listVisible = true' ng-blur='listVisible = false' ng-class='{"search-active": listVisible}' placeholder="To" />
+<ul class='devices-popover' ng-show='listVisible'>  
+  <li class="device" ng-mousedown='select({device:device})' ng-repeat='device in (devices|filtered)'><span class='device-thumb icon-default icon-{{device.type}}'></span> {{device.display}}</li>
+</ul>
+

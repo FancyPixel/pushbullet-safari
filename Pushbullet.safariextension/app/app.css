@@ -1,0 +1,253 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot?-1sf2oa');
+  src:url('fonts/icomoon.eot?#iefix-1sf2oa') format('embedded-opentype'),
+  url('fonts/icomoon.woff?-1sf2oa') format('woff'),
+  url('fonts/icomoon.ttf?-1sf2oa') format('truetype'),
+  url('fonts/icomoon.svg?-1sf2oa#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: white;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  background: #ecf0f1;
+  border-radius: 6px;
+  padding: 18px;
+  clear: both;
+  overflow: hidden;
+}
+
+.info-box {
+  height: 280px;
+  line-height: 280px;
+  text-align: center;
+  vertical-align: middle;
+  color: #999;
+  font-size: 0.9em;
+}
+
+input {
+  display: block;
+  width: 95%;
+  margin: 5px auto;
+  border: 2px solid #bdc3c7;
+  color: #34495e;
+  font-size: 15px;
+  padding: 8px 5px;
+  height: 20px;
+  text-indent: 6px;
+  -webkit-appearance: none;
+  transition: border .25s linear,color .25s linear;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+textarea {
+  display: block;
+  width: 92%;
+  margin: 5px auto;
+  font-size: 15px;
+  border: 2px solid #bdc3c7;
+  border-radius: 6px; 
+  padding: 8px 10px;
+  height: 100px;
+}
+
+.search-active {
+  border: 2px solid #27ae60;
+}
+
+.device-selected {
+  text-indent: 30px;
+}
+
+.selection {
+  position: relative;
+}
+
+.thumb-selected {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.devices-popover {
+  width: 85%;
+  max-height: 200px;
+  min-height: 20px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  border: 2px solid #bdc3c7;
+  background: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 110px;
+  z-index: 999;
+  list-style: none;
+  -webkit-padding-start: 0;
+}
+
+.device {
+  color: #34495e;
+  font-size: 13px;
+  padding: 8px 2px;
+  height: 20px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.device-thumb {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: white;
+  line-height: 20px;
+  text-align: center;
+  background: #34495e;
+  border-radius: 3px;
+  margin-left: 3px;
+}
+
+.icon-contact:before {
+  content: "\e604" !important;
+}
+
+.icon-default:before {
+  content: "\e601";
+}
+
+.icon-ios:before, .icon-android:before {
+  content: "\e602" !important;
+}
+
+.device:hover {
+  background: #ecf0f1;
+}
+
+.tab {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 24px;
+  line-height: 50px;
+  vertical-align: middle;
+  color: #bdc3c7;
+  text-align: center;
+  float: left;
+}
+
+.icon-note:hover, .icon-note.active {
+  background: #e67e22;
+  color: white;
+}
+
+.icon-note:before {
+  content: "\e603";
+}
+
+.icon-link:hover, .icon-link.active {
+  background: #3498db;
+  color: white;
+}
+
+.icon-link:before {
+  content: "\e605";
+}
+
+.icon-list:hover, .icon-list.active {
+  background: #9b59b6;
+  color: white;
+}
+
+.icon-list:before {
+  content: "\e606";
+}
+
+.icon-map:hover, .icon-map.active {
+  background: #f1c40f;
+  color: white;
+}
+
+.icon-map:before {
+  content: "\e600";
+}
+
+.send-button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 6px;
+  background: #27ae60;
+  font-weight: bold;
+  width: 100px;
+  float: right;
+  position: relative;
+  bottom: -10px;
+  cursor: pointer;
+}
+
+.api-input {
+  width: 75%;
+  display: inline-block;
+}
+
+.api-username {
+  width: 75%;
+  display: inline-block;
+  color: #34495e;
+  font-size: 15px;
+  padding: 8px 5px;
+  height: 20px;
+  text-indent: 6px;
+}
+
+.api-button {
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  width: 20%;
+  border-radius: 6px;
+  height: 36px;
+  line-height: 36px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+.login {
+  background: #27ae60;
+}
+
+.logout {
+  background: #ae2760;
+}

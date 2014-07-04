@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pushbullet</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="app/app.css"/>
+    <link rel="stylesheet" href="app/csspinner.css"/>
+  </head>
+    <body ng-app="pushbullet">
+  
+      <div ng-controller='PushablesCtrl'>
+        <div class='api-fields'>
+          <input class='api-input' type='text' ng-show='!loggedIn' ng-model="apiKey" placeholder='API Key (check your Pushbullet Settings)' />
+          <span class='api-button login' ng-click='saveApiKey()' ng-class='{csspinner: loading, "no-overlay": loading}' ng-show='!loggedIn'>{{loading ? '' : 'Save'}}</span>
+          
+          <span class='api-username' ng-show='loggedIn'>Hi, {{userName}}!</span> 
+          <span class='api-button logout' ng-click='removeApiKey()' ng-show='loggedIn'>Logout</span>
+        </div>
+      
+        <div class='container info-box' ng-hide='loggedIn'>
+          <span ng-show='!loading && !loggedIn'>
+            Get your API key in your Pushbullet user settings' page.
+          </span>
+          <span ng-show='loading && !loggedIn'>
+            Retreiving your stuff...
+          </span>
+        </div>
+
+        <div class='container' ng-show='loggedIn'>
+          <devices-list devices='devices' selection='selection' remove='removeSelection()' select='setIden(device)'></devices-list>
+          
+          <tab-group type='type' pushable='pushable'>
+
+            <tab title='Link' type='link'>
+              <input type="text" ng-model='pushable.linkTitle' placeholder='Title' />
+              <textarea rows='4' cols='50' ng-model='pushable.linkBody' placeholder='Message'>
+              </textarea>
+            </tab>
+            
+            <tab title='Note' type='note'>
+              <input type="text" ng-model='pushable.noteTitle' placeholder='Title' />
+              <textarea rows='4' cols='50' ng-model='pushable.noteBody' placeholder='Message'>
+              </textarea>
+            </tab>
+            
+            <!-- <tab title='List' type='list'> -->
+            <!--   <input type="text" ng&#45;model='listTitle' placeholder='Title' /> -->
+            <!--   <textarea rows='4' cols='50' ng&#45;model='listBody'> -->
+            <!--   </textarea> -->
+            <!-- </tab> -->
+            <!--  -->
+            <!-- <tab title='Address' type='map'> -->
+            <!--   <input type="text" ng&#45;model='pushable.mapTitle' /> -->
+            <!--   <textarea rows='4' cols='50' ng&#45;model='pushable.mapBody'> -->
+            <!--   </textarea> -->
+            <!-- </tab> -->
+          </tab-group>
+
+          <div class='send-button' ng-click='sendText()' ng-class='{csspinner: pushing, "no-overlay": loading}'>Push it!</div>
+
+        </div>
+      </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>    
+    <script src="app/filters.js"></script>  
+    <script src="app/directives.js"></script>  
+    <script src="app/services.js"></script>  
+    <script src="app/app.js"></script>  
+    <script type="text/javascript">
+      safari.self.height = 390;
+      safari.self.width = 420;
+    </script>
+  </body>
+</html>
