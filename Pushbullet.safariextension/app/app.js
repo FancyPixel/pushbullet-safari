@@ -42,7 +42,7 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
       angular.forEach(response.contacts, function(elem){
         elem.visible = true; 
         elem.type = 'contact';
-        elem.display = elem.name;
+        elem.display = elem.name + ' (' + elem.email + ')';
         $scope.devices.push(elem);
       });
     });
@@ -67,7 +67,7 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
 
   $scope.setIden = function(device) {
     $scope.selection = device;
-    $scope.iden = device.iden;
+    $scope.iden = device.email || device.iden;
   };
 
   $scope.removeSelection = function() {
@@ -77,7 +77,7 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
   
   $scope.sendText = function(){
     var params = {};
-    if ($scope.iden.split('@').length > 1) {
+    if ($scope.iden.indexOf('@') > 0) {
       params['email'] = $scope.iden;
     } else { 
       params['device_iden'] = $scope.iden;
