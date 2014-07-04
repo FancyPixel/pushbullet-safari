@@ -1,7 +1,7 @@
 pushbullet-safari
 =================
 
-![Logo](https://raw.githubusercontent.com/FancyPixel/pushbullet-safari/master/Icon.png)
+![Logo](https://raw.githubusercontent.com/FancyPixel/pushbullet-safari/master/Logo.png)
 
 A Pushbullet extension for Safari. 
 You can get a free Pushbullet account [here](https://www.pushbullet.com), it's free and awesome. 
