@@ -2,7 +2,7 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
 .controller('PushablesCtrl', function($scope, $http, Base64){
 
   // Mock safari's extension api, comment this out if you want to test the extension on your browser.
-  safari = {extension:{settings:{apiKey:''}}, application:{activeBrowserWindow:{activeTab:{title:''}}}}; 
+  // safari = {extension:{settings:{apiKey:''}}, application:{activeBrowserWindow:{activeTab:{title:''}}}}; 
 
   // Load the API key if present
   $scope.apiKey = safari.extension.settings.apiKey;
@@ -11,8 +11,12 @@ angular.module('pushbullet', ['pushbullet.services', 'pushbullet.directives', 'p
   $scope.loggedIn = false;
   $scope.selection = null;
   $scope.loading = false;
-  $scope.pushable = {};
-  $scope.pushable.linkTitle = safari.application.activeBrowserWindow.activeTab.title;
+
+  safari.application.addEventListener('popover', function(event) {
+    $scope.pushable = {}
+    $scope.pushable.linkTitle = safari.application.activeBrowserWindow.activeTab.title;
+    $scope.refreshData();
+  }, true);
 
   $scope.login = function() {
     $scope.loading = true;
