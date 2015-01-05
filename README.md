@@ -14,7 +14,7 @@ Enable the Development Tools in Safari, then go to `Develop > Show Extension Bui
 
     The MIT License (MIT)
 
-    Copyright (c) 2014 Fancy Pixel S.r.l.
+    Copyright (c) 2015 Fancy Pixel S.r.l.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of
     this software and associated documentation files (the "Software"), to deal in
